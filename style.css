@@ -1,1 +1,58 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #eee;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #222, #333);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.button:hover {
+    background-color: #555;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.2),
+                -5px -5px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+}
+
+.button:active {
+    transform: translateY(0);
+    background-color: #444;
+}
