@@ -1,20 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metro</title>
+  <style>
+    /* Global Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212; /* Dark background */
+      color: #ffffff; /* Light text */
+    }
+
+    /* Navigation bar styling */
+    .nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1f1f1f; /* Slightly lighter black */
+      padding: 10px;
+    }
+
+    .nav button {
+      background-color: #1f1f1f;
+      color: #ffffff;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav button:hover {
+      background-color: #333333; /* Hover effect for tabs */
+    }
+
+    .nav button.active {
+      background-color: #ff5722; /* Active tab color */
+    }
+
+    /* Content sections */
+    .tab-content {
+      display: none; /* Hide all content by default */
+      padding: 20px;
+    }
+
+    .tab-content.active {
+      display: block; /* Show active content */
+    }
+
+    .tab-content h2 {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to MetroUnblocked</h1>
-        <h3>All Games have been shutdown for the time being, everything will be up after I revamp the website and add more stuff.</h3>
-        
-        
-        <div class="button-container">
-             <a href="https://highdeveloperr.github.io/blog" target="_blank" class="button">Info/Updates</a>
-        </div>
-    </div>
+
+  <!-- Navigation Tabs -->
+  <div class="nav">
+    <button class="tab-button active" data-tab="games">Games</button>
+    <button class="tab-button" data-tab="updates">Updates</button>
+    <button class="tab-button" data-tab="contact">Contact</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="games" class="tab-content active">
+    <h2>Games</h2>
+    <p>The Revamp is soon!... 👀</p>
+  </div>
+
+  <div id="updates" class="tab-content">
+    <h2>Updates</h2>
+    <p>Please hang tight, we are working on the revamp!</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>No Contact available yet, please check back soon.</p>
+  </div>
+
+  <script>
+    // JavaScript to handle tab switching
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove 'active' class from all buttons and content
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Add 'active' class to the clicked button and corresponding content
+        button.classList.add('active');
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
