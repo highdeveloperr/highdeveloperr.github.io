@@ -83,53 +83,29 @@
       }
     }
 
-    /* Animated stars around Metro */
-    .stars {
-      position: relative;
-      margin-top: 20px;
-    }
-
-    .stars span {
+    /* Button styling for games */
+    .game-button {
       display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #ffffff;
-      border-radius: 50%;
-      position: absolute;
-      animation: blink 2s infinite ease-in-out alternate;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #A020F0;
+      padding: 15px 20px;
+      border: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
     }
 
-    @keyframes blink {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0.2;
-      }
+    .game-button img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
     }
 
-    .star1 {
-      top: -30px;
-      left: 40%;
-      animation-delay: 0s;
-    }
-
-    .star2 {
-      top: -50px;
-      right: 45%;
-      animation-delay: 0.5s;
-    }
-
-    .star3 {
-      bottom: 10px;
-      left: 55%;
-      animation-delay: 1s;
-    }
-
-    .star4 {
-      top: 20px;
-      right: 30%;
-      animation-delay: 1.5s;
+    .game-button:hover {
+      background-color: #9932CC;
     }
 
     /* Announcements Page Styling */
@@ -177,12 +153,6 @@
   <div id="home" class="tab-content active">
     <div class="home-page">
       <h1 class="metro">Metro</h1>
-      <div class="stars">
-        <span class="star1"></span>
-        <span class="star2"></span>
-        <span class="star3"></span>
-        <span class="star4"></span>
-      </div>
       <h2>Where are the games?</h2>
       <p>I am working on a Revamp right now, check the announcements tab for when everything will be back.</p>
     </div>
@@ -193,7 +163,7 @@
     <h2>Games</h2>
     <p>Welcome to the NEW Era of Games.</p>
 
-    <!-- Button to open Bitlife.html -->
+    <!-- Button to open bitlife game -->
     <a href="bitlife" class="game-button">
       <img src="bitlife.webp" alt="Bitlife Icon">
       <span>Play Bitlife</span>
