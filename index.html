@@ -59,30 +59,107 @@
       margin-top: 0;
     }
 
-    /* Button styling for games */
-    .game-button {
+    /* Home Page Revamp */
+    .home-page {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .home-page .metro {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #A020F0;
+      text-shadow: 0 0 20px #A020F0, 0 0 40px #9932CC, 0 0 60px #ff00ff;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    /* Glowing animation for Metro */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 20px #A020F0, 0 0 40px #9932CC, 0 0 60px #ff00ff;
+      }
+      100% {
+        text-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff;
+      }
+    }
+
+    /* Animated stars around Metro */
+    .stars {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .stars span {
       display: inline-block;
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #A020F0;
-      padding: 15px 20px;
-      border: none;
-      font-size: 18px;
-      border-radius: 10px;
-      transition: background-color 0.3s;
+      width: 10px;
+      height: 10px;
+      background: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      animation: blink 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    .star1 {
+      top: -30px;
+      left: 40%;
+      animation-delay: 0s;
+    }
+
+    .star2 {
+      top: -50px;
+      right: 45%;
+      animation-delay: 0.5s;
+    }
+
+    .star3 {
+      bottom: 10px;
+      left: 55%;
+      animation-delay: 1s;
+    }
+
+    .star4 {
+      top: 20px;
+      right: 30%;
+      animation-delay: 1.5s;
+    }
+
+    /* Announcements Page Styling */
+    .announcement-page {
       display: flex;
+      flex-direction: column;
       align-items: center;
+      padding: 30px 20px;
     }
 
-    .game-button img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .announcement {
+      background-color: #1f1f1f;
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
     }
 
-    .game-button:hover {
-      background-color: #9932CC;
+    .announcement h3 {
+      color: #A020F0;
+      margin-bottom: 10px;
     }
+
+    .announcement p {
+      font-size: 1.1rem;
+    }
+
   </style>
 </head>
 <body>
@@ -96,12 +173,19 @@
   </div>
 
   <!-- Tab Content -->
+  <!-- Home Page -->
   <div id="home" class="tab-content active">
-    <h2>Home</h2>
-    <p>Welcome to Metro.</p>
-
-    <h2>Where are the games?</h2>
-    <p>I am working on a Revamp right now, check the annoucements tab for when everything will be back.</p>
+    <div class="home-page">
+      <h1 class="metro">Metro</h1>
+      <div class="stars">
+        <span class="star1"></span>
+        <span class="star2"></span>
+        <span class="star3"></span>
+        <span class="star4"></span>
+      </div>
+      <h2>Where are the games?</h2>
+      <p>I am working on a Revamp right now, check the announcements tab for when everything will be back.</p>
+    </div>
   </div>
 
   <!-- Games Page -->
@@ -118,16 +202,18 @@
 
   <!-- Announcements Page -->
   <div id="announcements" class="tab-content">
-    <h2>Announcements</h2>
+    <div class="announcement-page">
+      <h2>Announcements</h2>
 
-    <div class="announcement">
-      <h3>Launch</h3>
-      <p>We are launching the website to the public! Please note we will have bugs.</p>
-    </div>
+      <div class="announcement">
+        <h3>Launch</h3>
+        <p>We are launching the website to the public! Please note we will have bugs.</p>
+      </div>
 
-    <div class="announcement">
-      <h3>Revamp Info</h3>
-      <p>REVAMP RELEASED!</p>
+      <div class="announcement">
+        <h3>Revamp Info</h3>
+        <p>REVAMP RELEASED!</p>
+      </div>
     </div>
   </div>
 
