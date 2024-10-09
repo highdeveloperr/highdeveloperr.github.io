@@ -16,9 +16,10 @@
     /* Navigation bar styling */
     .nav {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end; /* Align tabs to the right */
       background-color: #1f1f1f; /* Slightly lighter black */
       padding: 10px;
+      padding-right: 30px;
     }
 
     .nav button {
@@ -28,15 +29,20 @@
       padding: 15px 30px;
       cursor: pointer;
       font-size: 18px;
-      transition: background-color 0.3s ease;
+      margin-left: 10px; /* Add spacing between tabs */
+      position: relative;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* Glowing effect */
     .nav button:hover {
-      background-color: #333333; /* Hover effect for tabs */
+      background-color: #333333; /* Hover effect */
+      box-shadow: 0px 0px 8px #ff5722; /* Glowing effect */
     }
 
     .nav button.active {
       background-color: #ff5722; /* Active tab color */
+      box-shadow: 0px 0px 12px #ff5722; /* Active tab glowing effect */
     }
 
     /* Content sections */
@@ -52,31 +58,66 @@
     .tab-content h2 {
       margin-top: 0;
     }
+
+    /* Announcement styling (Optional customization for Announcements section) */
+    .announcement {
+      background-color: #1e1e1e;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid #ff5722;
+    }
+
+    .announcement h3 {
+      margin: 0;
+      color: #ff5722;
+    }
   </style>
 </head>
 <body>
 
   <!-- Navigation Tabs -->
   <div class="nav">
-    <button class="tab-button active" data-tab="games">Games</button>
-    <button class="tab-button" data-tab="updates">Updates</button>
+    <button class="tab-button active" data-tab="home">Home</button>
+    <button class="tab-button" data-tab="games">Games</button>
+    <button class="tab-button" data-tab="announcements">Announcements</button>
     <button class="tab-button" data-tab="contact">Contact</button>
   </div>
 
   <!-- Tab Content -->
-  <div id="games" class="tab-content active">
-    <h2>Games</h2>
-    <p>The Revamp is soon!... 👀</p>
+  <div id="home" class="tab-content active">
+    <h2>Home</h2>
+    <p>Welcome to Metro.</p>
+
+    <h2>Where are the games?</h2>
+    <p>I am working on a Revamp right now, check the annoucements tab for when everything will be back.</p>
   </div>
 
-  <div id="updates" class="tab-content">
-    <h2>Updates</h2>
-    <p>Please hang tight, we are working on the revamp!</p>
+  <div id="games" class="tab-content">
+    <h2>Games</h2>
+    <p>No Gamnes yet, please be paitent.</p>
+  </div>
+
+  <!-- Announcements Page -->
+  <div id="announcements" class="tab-content">
+    <h2>Announcements</h2>
+
+    <!-- Manually add announcements here -->
+    <div class="announcement">
+      <h3>Launch</h3>
+      <p>We are launching the website to the public! Please note we will have bugs.</p>
+    </div>
+
+    <div class="announcement">
+      <h3>Revamp Info</h3>
+      <p>The games will be down from October 9th to October 13.</p>
+    </div>
+
+    <!-- Add more announcements by copying the above structure -->
   </div>
 
   <div id="contact" class="tab-content">
     <h2>Contact</h2>
-    <p>No Contact available yet, please check back soon.</p>
+    <p>Nothing here yet.</p>
   </div>
 
   <script>
