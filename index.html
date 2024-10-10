@@ -90,6 +90,55 @@
     .game-button:hover {
       background-color: #9932CC;
     }
+
+    /* Account Page Styling */
+    .login-form, .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
+    }
+
+    .login-form input, .signup-form input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-form button, .signup-form button {
+      background-color: #A020F0;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .login-form button:hover, .signup-form button:hover {
+      background-color: #9932CC;
+    }
+
+    .small-link {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .small-link a {
+      color: #A020F0;
+      text-decoration: none;
+    }
+
+    .small-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -100,6 +149,7 @@
     <button class="tab-button" data-tab="games">Games</button>
     <button class="tab-button" data-tab="announcements">Announcements</button>
     <button class="tab-button" data-tab="contact">Contact</button>
+    <button class="tab-button" data-tab="account">Account</button>
   </div>
 
   <!-- Tab Content -->
@@ -119,18 +169,11 @@
 
     <!-- Game Buttons Container -->
     <div class="game-buttons">
-      <!-- Button Template -->
       <a href="bitlife" class="game-button">
         <img src="bitlife.webp" alt="Bitlife Icon">
         <span>Play Bitlife</span>
       </a>
-
-      <!-- Copy this block to add new buttons -->
-      <!-- Example of new button -->
-      <a href="examplegame" class="game-button">
-        <img src="examplegame-icon.webp" alt="Example Game Icon">
-        <span>Play Example Game</span>
-      </a>
+      <!-- Add new buttons here -->
     </div>
   </div>
 
@@ -138,12 +181,10 @@
   <div id="announcements" class="tab-content">
     <div class="announcement-page">
       <h2>Announcements</h2>
-
       <div class="announcement">
         <h3>Launch</h3>
         <p>We are launching the website to the public! Please note we will have bugs.</p>
       </div>
-
       <div class="announcement">
         <h3>Revamp Info</h3>
         <p>REVAMP RELEASED!</p>
@@ -151,9 +192,26 @@
     </div>
   </div>
 
+  <!-- Contact Page -->
   <div id="contact" class="tab-content">
     <h2>Contact</h2>
     <p>Nothing here yet.</p>
+  </div>
+
+  <!-- Account Page -->
+  <div id="account" class="tab-content">
+    <!-- Login Form -->
+    <div class="login-form">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+
+      <!-- Sign-Up Link -->
+      <div class="small-link">
+        <p>Don't have an account? <a href="https://example.com/signup" target="_blank">Sign Up</a></p>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -173,6 +231,23 @@
         document.getElementById(tabId).classList.add('active');
       });
     });
+
+    // Admin login credentials
+    const adminUsername = "admin";
+    const adminPassword = "admin123";
+
+    // Login function
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === adminUsername && password === adminPassword) {
+        alert("Welcome, Admin!");
+        // Redirect to admin dashboard or provide access here
+      } else {
+        alert("Invalid login credentials.");
+      }
+    }
   </script>
 
 </body>
