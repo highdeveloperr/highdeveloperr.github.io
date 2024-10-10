@@ -1,179 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metro</title>
-  <style>
-    /* Global Styling */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121212; /* Dark background */
-      color: #ffffff; /* Light text */
-    }
-
-    /* Navigation bar styling */
-    .nav {
-      display: flex;
-      justify-content: flex-end; /* Align tabs to the right */
-      background-color: #1f1f1f; /* Slightly lighter black */
-      padding: 10px;
-      padding-right: 30px;
-    }
-
-    .nav button {
-      background-color: #1f1f1f;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-left: 10px; /* Add spacing between tabs */
-      position: relative;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Glowing effect */
-    .nav button:hover {
-      background-color: #A020F0; /* Hover effect */
-      box-shadow: 0px 0px 8px #a020f8; /* Glowing effect */
-    }
-
-    .nav button.active {
-      background-color: #A020F0; /* Active tab color */
-      box-shadow: 0px 0px 12px #ff5722; /* Active tab glowing effect */
-    }
-
-    /* Content sections */
-    .tab-content {
-      display: none; /* Hide all content by default */
-      padding: 20px;
-    }
-
-    .tab-content.active {
-      display: block; /* Show active content */
-    }
-
-    .tab-content h2 {
-      margin-top: 0;
-    }
-
-    /* Games Page Button Styling */
-    .game-buttons {
-      display: flex;
-      flex-wrap: wrap; /* Allow buttons to wrap if there are too many */
-      gap: 10px; /* Space between buttons */
-      margin-top: 20px;
-    }
-
-    .game-button {
-      display: inline-block;
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #A020F0;
-      padding: 10px 15px;
-      border: none;
-      font-size: 14px;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Space between icon and text */
-    }
-
-    .game-button img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .game-button:hover {
-      background-color: #9932CC;
-    }
-  </style>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Drive Mad</title>
+<script type="text/javascript" src="Jump_Gamemonetize.js"></script>
+<meta name="description" content="">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="webapp/fancade.css">
+<link rel="icon" href="webapp/cover.jpg">
 </head>
-<body>
-
-  <!-- Navigation Tabs -->
-  <div class="nav">
-    <button class="tab-button active" data-tab="home">Home</button>
-    <button class="tab-button" data-tab="games">Games</button>
-    <button class="tab-button" data-tab="announcements">Announcements</button>
-    <button class="tab-button" data-tab="contact">Contact</button>
-  </div>
-
-  <!-- Tab Content -->
-  <!-- Home Page -->
-  <div id="home" class="tab-content active">
-    <div class="home-page">
-      <h1 class="metro">Metro</h1>
-      <h2>What is Metro?</h2>
-      <p>A New Era of Unblocked Games.</p>
-    </div>
-  </div>
-
-  <!-- Games Page -->
-  <div id="games" class="tab-content">
-    <h2>Games</h2>
-    <p>Welcome to the NEW Era of Games.</p>
-
-    <!-- Game Buttons Container -->
-    <div class="game-buttons">
-      <!-- Button Template -->
-      <a href="bitlife" class="game-button">
-        <img src="bitlife.webp" alt="Bitlife Icon">
-        <span>Play Bitlife</span>
-      </a>
-
-      <!-- Copy this block to add new buttons -->
-      <!-- Example of new button -->
-      <a href="subway-surfers" class="game-button">
-        <img src="examplegame-icon.webp" alt="Example Game Icon">
-        <span>Play Subway Surfers</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Announcements Page -->
-  <div id="announcements" class="tab-content">
-    <div class="announcement-page">
-      <h2>Announcements</h2>
-
-      <div class="announcement">
-        <h3>Launch</h3>
-        <p>We are launching the website to the public! Please note we will have bugs.</p>
-      </div>
-
-      <div class="announcement">
-        <h3>Revamp Info</h3>
-        <p>REVAMP RELEASED!</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p>Nothing here yet.</p>
-  </div>
-
-  <script>
-    // JavaScript to handle tab switching
-    const buttons = document.querySelectorAll('.tab-button');
-    const contents = document.querySelectorAll('.tab-content');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove 'active' class from all buttons and content
-        buttons.forEach(btn => btn.classList.remove('active'));
-        contents.forEach(content => content.classList.remove('active'));
-
-        // Add 'active' class to the clicked button and corresponding content
-        button.classList.add('active');
-        const tabId = button.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-  </script>
-
+<body id="body">
+<div id="modal_parent">
+<div id="modal_content"><span id="modal_close_button">&times;</span>
+<div id="store_link_modal_content" class="modal_inner"></div>
+<div id="share_file_modal_content" class="modal_inner"></div>
+</div>
+</div>
+<div id="canvas_border" class="emscripten_border">
+<div id="play_content" class="middle center">
+<div class="edge">
+<div class="box">
+<div class="black"><img src="webapp/cover.jpg" class="cover">
+<p class="title">Drive Mad</p>
+<p class="author">Martin Magni</p>
+</div>
+</div>
+</div>
+<div id="progress_or_play"><progress id="progress" class="loading" value="0" max="100"></progress></div>
+<p class="description"></p>
+</div><canvas class="emscripten" id="canvas" tabindex="-1"></canvas>
+<div id="gradient"></div>
+<div id="webview_content"></div>
+</div>
+<script type="text/javascript" src="webapp/source_min.js"></script>
+<script type="text/javascript" src="webapp/index.js"></script>
 </body>
 </html>
