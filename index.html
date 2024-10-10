@@ -26,9 +26,9 @@
       background-color: #1f1f1f;
       color: #ffffff;
       border: none;
-      padding: 15px 30px;
+      padding: 10px 20px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 16px;
       margin-left: 10px; /* Add spacing between tabs */
       position: relative;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -59,83 +59,37 @@
       margin-top: 0;
     }
 
-    /* Home Page Revamp */
-    .home-page {
-      text-align: center;
-      padding: 50px 20px;
+    /* Games Page Button Styling */
+    .game-buttons {
+      display: flex;
+      flex-wrap: wrap; /* Allow buttons to wrap if there are too many */
+      gap: 10px; /* Space between buttons */
+      margin-top: 20px;
     }
 
-    .home-page .metro {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #A020F0;
-      text-shadow: 0 0 20px #A020F0, 0 0 40px #9932CC, 0 0 60px #ff00ff;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    /* Glowing animation for Metro */
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 20px #A020F0, 0 0 40px #9932CC, 0 0 60px #ff00ff;
-      }
-      100% {
-        text-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff;
-      }
-    }
-
-    /* Button styling for games */
     .game-button {
       display: inline-block;
       text-decoration: none;
       color: #ffffff;
       background-color: #A020F0;
-      padding: 15px 20px;
+      padding: 10px 15px;
       border: none;
-      font-size: 18px;
-      border-radius: 10px;
+      font-size: 14px;
+      border-radius: 8px;
       transition: background-color 0.3s;
       display: flex;
       align-items: center;
+      gap: 10px; /* Space between icon and text */
     }
 
     .game-button img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+      width: 30px;
+      height: 30px;
     }
 
     .game-button:hover {
       background-color: #9932CC;
     }
-
-    /* Announcements Page Styling */
-    .announcement-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-    }
-
-    .announcement {
-      background-color: #1f1f1f;
-      width: 80%;
-      max-width: 600px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
-    }
-
-    .announcement h3 {
-      color: #A020F0;
-      margin-bottom: 10px;
-    }
-
-    .announcement p {
-      font-size: 1.1rem;
-    }
-
   </style>
 </head>
 <body>
@@ -163,11 +117,21 @@
     <h2>Games</h2>
     <p>Welcome to the NEW Era of Games.</p>
 
-    <!-- Button to open bitlife game -->
-    <a href="bitlife" class="game-button">
-      <img src="bitlife.webp" alt="Bitlife Icon">
-      <span>Play Bitlife</span>
-    </a>
+    <!-- Game Buttons Container -->
+    <div class="game-buttons">
+      <!-- Button Template -->
+      <a href="bitlife" class="game-button">
+        <img src="bitlife.webp" alt="Bitlife Icon">
+        <span>Play Bitlife</span>
+      </a>
+
+      <!-- Copy this block to add new buttons -->
+      <!-- Example of new button -->
+      <a href="subway-surfers" class="game-button">
+        <img src="examplegame-icon.webp" alt="Example Game Icon">
+        <span>Play Subway Surfers</span>
+      </a>
+    </div>
   </div>
 
   <!-- Announcements Page -->
