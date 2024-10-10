@@ -59,85 +59,45 @@
       margin-top: 0;
     }
 
-    /* Games Page Button Styling */
-    .game-buttons {
-      display: flex;
-      flex-wrap: wrap; /* Allow buttons to wrap if there are too many */
-      gap: 10px; /* Space between buttons */
-      margin-top: 20px;
-    }
-
-    .game-button {
-      display: inline-block;
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #A020F0;
-      padding: 10px 15px;
-      border: none;
-      font-size: 14px;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Space between icon and text */
-    }
-
-    .game-button img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .game-button:hover {
-      background-color: #9932CC;
-    }
-
-    /* Account Page Styling */
-    .login-form, .signup-form {
+    /* Embedded Browser Section */
+    .browser-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #1f1f1f;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
+      gap: 10px;
     }
 
-    .login-form input, .signup-form input {
-      margin: 10px 0;
-      padding: 10px;
+    .browser-input {
       width: 100%;
+      max-width: 600px;
+      padding: 10px;
       border: none;
       border-radius: 5px;
+      font-size: 16px;
     }
 
-    .login-form button, .signup-form button {
-      background-color: #A020F0;
-      color: #ffffff;
-      border: none;
+    .browser-button {
       padding: 10px 20px;
-      cursor: pointer;
+      background-color: #A020F0;
+      color: white;
+      border: none;
       border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
       transition: background-color 0.3s;
     }
 
-    .login-form button:hover, .signup-form button:hover {
+    .browser-button:hover {
       background-color: #9932CC;
     }
 
-    .small-link {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .small-link a {
-      color: #A020F0;
-      text-decoration: none;
-    }
-
-    .small-link a:hover {
-      text-decoration: underline;
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
     }
   </style>
 </head>
@@ -149,7 +109,7 @@
     <button class="tab-button" data-tab="games">Games</button>
     <button class="tab-button" data-tab="announcements">Announcements</button>
     <button class="tab-button" data-tab="contact">Contact</button>
-    <button class="tab-button" data-tab="account">Account</button>
+    <button class="tab-button" data-tab="browser">Unblocked Browser</button>
   </div>
 
   <!-- Tab Content -->
@@ -173,7 +133,6 @@
         <img src="bitlife.webp" alt="Bitlife Icon">
         <span>Play Bitlife</span>
       </a>
-      <!-- Add new buttons here -->
     </div>
   </div>
 
@@ -198,19 +157,14 @@
     <p>Nothing here yet.</p>
   </div>
 
-  <!-- Account Page -->
-  <div id="account" class="tab-content">
-    <!-- Login Form -->
-    <div class="login-form">
-      <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button onclick="login()">Login</button>
-
-      <!-- Sign-Up Link -->
-      <div class="small-link">
-        <p>Don't have an account? <a href="https://example.com/signup" target="_blank">Sign Up</a></p>
-      </div>
+  <!-- Unblocked Browser Page -->
+  <div id="browser" class="tab-content">
+    <h2>Unblocked Browser</h2>
+    <div class="browser-container">
+      <input type="text" id="browser-url" class="browser-input" placeholder="Enter website URL (e.g., https://example.com)">
+      <button class="browser-button" onclick="openWebsite()">Open Website</button>
+      <!-- Iframe to display the website -->
+      <iframe id="website-frame" src=""></iframe>
     </div>
   </div>
 
@@ -232,20 +186,15 @@
       });
     });
 
-    // Admin login credentials
-    const adminUsername = "admin";
-    const adminPassword = "admin123";
-
-    // Login function
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      if (username === adminUsername && password === adminPassword) {
-        alert("Welcome, Admin!");
-        // Redirect to admin dashboard or provide access here
+    // Function to open the website inside the iframe
+    function openWebsite() {
+      const urlInput = document.getElementById('browser-url').value;
+      const iframe = document.getElementById('website-frame');
+      
+      if (urlInput) {
+        iframe.src = urlInput;
       } else {
-        alert("Invalid login credentials.");
+        alert('Please enter a valid URL.');
       }
     }
   </script>
