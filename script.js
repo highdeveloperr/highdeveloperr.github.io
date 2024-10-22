@@ -1,6 +1,6 @@
 const validCredentials = {
-    username: 'admin',
-    password: 'password123'
+    username: 'BETA123',
+    password: 'allowedentry'
 };
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
