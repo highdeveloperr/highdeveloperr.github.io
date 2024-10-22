@@ -1,7 +1,7 @@
 const validCredentials = {
     admin: { password: 'admin123', redirect: 'protected' },
     user1: { password: 'user1', redirect: 'user1.html' },
-    MOVIE: { password: 'MINION', redirect: 'user2.html' },
+    minion: { password: 'minion', redirect: 'user2.html' },
 };
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
