@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         message.style.color = 'green';
         // Redirect to a protected page
         setTimeout(() => {
-            window.location.href = 'protected.html'; // Change this to your protected page
+            window.location.href = 'protected'; // Change this to your protected page
         }, 2000);
     } else {
         message.textContent = 'Invalid username or password.';
